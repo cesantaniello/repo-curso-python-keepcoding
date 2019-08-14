@@ -21,6 +21,7 @@ class PerroAsistencia(Perro):
     def __init__(self, nombre, edad, peso, amo):
         Perro.__init__(self, nombre, edad, peso)
         self.amo = amo
+        self.trabajando = False
         
     def __str__(self):
         return "Perro de asistencia de {}".format(self.amo)
@@ -28,6 +29,18 @@ class PerroAsistencia(Perro):
     #creo el metodo pasear
     def pasear(self):
         print("Soy {} y ayudo a mi amo, {} a pasear".format(self.nombre, self.amo))
+        
+    def ladrar(self):
+        if self.trabajando:
+            print("Shhhh, no puedo ladrar")
+        else:
+            Perro.ladrar(self)
+            
+    def trabajando(self, valor=None):
+        if valor == None:
+            return self.__trabajando
+        else:
+            self.__trabajando = valor
             
 salchicho = Perro("Salchicho", 3, 12)
 lola = Perro("Lola", 8, 1.5)
@@ -37,6 +50,8 @@ rantanplan = PerroAsistencia("Ran Tan Plan", 4, 8, "Lucky Luke")
 
 #print(salchicho, lola, miko) #Muestra caracteristicas de los objetos
 #print(rantanplan) #Imrpime mensaje del metodo estandar de la subclase
-rantanplan.pasear()
+#rantanplan.pasear() Imprime la funcion pasear de la subclase
+
+rantanplan.ladrar()
         
         
