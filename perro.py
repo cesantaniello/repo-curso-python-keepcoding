@@ -52,6 +52,17 @@ rantanplan = PerroAsistencia("Ran Tan Plan", 4, 8, "Lucky Luke")
 #print(rantanplan) #Imrpime mensaje del metodo estandar de la subclase
 #rantanplan.pasear() Imprime la funcion pasear de la subclase
 
-rantanplan.ladrar()
+#rantanplan.ladrar()
+
+class Timido():
+    def __init__(self, nombre):
+        self.__nombre = nombre
         
+    def preguntarNombreConCuidado(self):
+        return self.__nombre
+
+#chico = Timido("Raul")
+#chico.__nombre
+
+#chico.preguntarNombreConCuidado()
         
