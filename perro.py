@@ -18,10 +18,12 @@ class Perro():
     
 #Creo la subclase PerroAsistencia que hereda de la clase Padre Perro
 class PerroAsistencia(Perro):
+    trabajando = False
+    
     def __init__(self, nombre, edad, peso, amo):
         Perro.__init__(self, nombre, edad, peso)
         self.amo = amo
-        self.trabajando = False
+
         
     def __str__(self):
         return "Perro de asistencia de {}".format(self.amo)
